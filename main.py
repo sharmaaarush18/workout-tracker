@@ -3,16 +3,16 @@ import base64
 import datetime
 
 # Nutritionix API credentials
-APP_ID = "1d920f1f"
-API_KEY = "4a7c3865cc67b09f7ab569afbd8adfd5"
+APP_ID = "YOUR_APP_ID"
+API_KEY = "YOUR_API_KEY"
 URL = "https://trackapi.nutritionix.com/v2/natural/exercise"
 
 # Sheety setup
-USERNAME = "aarushsharma"
-PASSWORD = "aarushop1124"
-PROJECT_NAME = "workoutTracking"
-SHEET_NAME = "workouts"
-SHEETY_URL = f"https://api.sheety.co/9bfba7adc030451998f1b692b30737ab/{PROJECT_NAME}/{SHEET_NAME}"
+USERNAME = "YOUR_SHEETY_USERNAME"
+PASSWORD = "YOUR_SHEETY_PASSWORD"
+PROJECT_NAME = "YOUR_PROJECT_NAME"
+SHEET_NAME = "YOUR_SHEET_NAME"
+SHEETY_URL = f"https://api.sheety.co/YOUR_PROJECT_ID/{PROJECT_NAME}/{SHEET_NAME}"
 
 # Nutritionix headers
 headers = {
