@@ -33,7 +33,7 @@ This Python project uses the Nutritionix API to analyze your workout and log the
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/workout-tracker.git
+   git clone https://github.com/sharmaaarush18/workout-tracker.git
    cd workout-tracker
    ```
 
@@ -66,6 +66,41 @@ This Python project uses the Nutritionix API to analyze your workout and log the
 
 ---
 
+## 📁 File Structure
+
+```bash
+workout-tracker/
+├── main.py               # Core logic of workout tracking
+├── requirements.txt      # Required dependencies
+├── LICENSE               # MIT License
+└── README.md             # Project documentation
+```
+
+---
+
+## 📦 requirements.txt
+
+```bash
+requests
+```
+
+---
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🧠 Project Description
+
+This project is a natural-language-powered calorie tracker using **Nutritionix API** and **Sheety API**. You just type your workouts the way you would speak, and it calculates your calories and logs the session to your own Google Sheet. A simple yet smart automation system to track your fitness journey daily! ✅
+
+---
+
+## ✨ Credits
+
+- Built with 💪 by Aarush Sharma  
+- APIs used:  
+  - [Nutritionix API](https://www.nutritionix.com/business/api)  
+  - [Sheety API](https://sheety.co/)
