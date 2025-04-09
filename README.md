@@ -22,10 +22,10 @@ This Python project uses the Nutritionix API to analyze your workout and log the
 
 ## 🛠️ Tech Stack
 
-1. **Python 3**
-2. **Nutritionix API**
-3. **Sheety API**
-4. **`requests` Python Module**
+- **Python 3**
+- **Nutritionix API**
+- **Sheety API**
+- **`requests` Python Module**
 
 ---
 
@@ -42,27 +42,63 @@ This Python project uses the Nutritionix API to analyze your workout and log the
    pip install -r requirements.txt
    ```
 
-3. **Configure Your Credentials**  
-   Open `main.py` and replace the placeholders with:
-   - Your **Nutritionix App ID**
-   - Your **Nutritionix API Key**
-   - Your **Sheety username** and **password** (Base64 encoded)
-   - Your Sheety **project name** and **sheet name**
+3. **Configure Your Environment Variables**
+   Create a file named `.env` in the root directory and add:
+
+   ```dotenv
+   # Nutritionix API
+   APP_ID=your_nutritionix_app_id
+   API_KEY=your_nutritionix_api_key
+
+   # Sheety API
+   USERNAME=your_sheety_username
+   PASSWORD=your_sheety_password
+
+   # Optional: Link to your workout Google Sheet
+   GOOGLE_SHEET_LINK=https://docs.google.com/spreadsheets/d/your_spreadsheet_id/edit#gid=0
+   ```
+
+   > ⚠️ **Never commit this file to GitHub** — add `.env` to your `.gitignore`.
 
 4. **Run the Program**
    ```bash
    python main.py
    ```
 
-5. **Log Your Workout**  
+5. **Log Your Workout**
    When prompted, type something like:
    ```
    Ran 3km and did 15 minutes of yoga
    ```
    The program will:
-   - Understand it
-   - Calculate the calories burned
-   - Auto-log it to your connected Google Sheet 🎯
+   - Understand the input using Nutritionix
+   - Calculate calories burned
+   - Auto-log the workout into your connected Google Sheet ✅
+
+---
+
+## 📝 Google Sheet Setup
+
+1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet.
+2. Add the following headers in **Row 1** exactly:
+
+| Date       | Time     | Exercise | Duration | Calories |
+|------------|----------|----------|----------|----------|
+| 21/07/2020 | 15:00:00 | Running  | 22       | 130      |
+
+**Header Notes:**
+- `Date`: `DD/MM/YYYY`
+- `Time`: `HH:MM:SS` (24-hour format)
+- `Exercise`: The workout type
+- `Duration`: In minutes
+- `Calories`: Auto-fetched from Nutritionix
+
+3. Set up a [Sheety](https://sheety.co/) project connected to this sheet.
+4. In `main.py`, make sure `PROJECT_NAME` and `SHEET_NAME` match your Sheety project:
+   ```python
+   PROJECT_NAME = "workoutTracking"
+   SHEET_NAME = "workouts"
+   ```
 
 ---
 
@@ -71,6 +107,7 @@ This Python project uses the Nutritionix API to analyze your workout and log the
 ```bash
 workout-tracker/
 ├── main.py               # Core logic of workout tracking
+├── .env                  # Your personal API keys (not committed)
 ├── requirements.txt      # Required dependencies
 ├── LICENSE               # MIT License
 └── README.md             # Project documentation
@@ -80,8 +117,9 @@ workout-tracker/
 
 ## 📦 requirements.txt
 
-```bash
+```text
 requests
+python-dotenv
 ```
 
 ---
